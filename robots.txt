@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://rtakatsky.github.io/al-folio/sitemap.xml
+Sitemap: https://rtakatsky.github.io/sitemap.xml
