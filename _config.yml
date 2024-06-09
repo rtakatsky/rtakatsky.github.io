@@ -127,8 +127,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Personal blogs # blog_name will be displayed in your blog page
+blog_description: I write about consciousness, AI alignment, and other topics. # blog_description will be displayed in your blog page
 permalink: /blog/:year/:title/
 lsi: true # produce an index for related posts
 
@@ -163,9 +163,10 @@ disqus_shortname: al-folio # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-
+  - name: zenn.dev
+    rss_url: https://zenn.dev/rtakatsky/feed
+  - name: ALIGN Blog
+    rss_url: https://www.aialign.net/blog?author=66470cbc92e6f55364223cef&format=rss
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------

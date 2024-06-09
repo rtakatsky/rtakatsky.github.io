@@ -2,11 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Ryota Takatsuki
     - name: Date of Birth
-      value: 14th March 1879
+      value: 11th January 2001
     - name: Languages
-      value: English, German
+      value: Japanese, English, Mandarin
 
 - title: Education
   type: time_table
