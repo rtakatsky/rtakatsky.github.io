@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Just started as a research fellow at AI Alingment Network (ALIGN)!
+Just started as a research fellow at AI Alignment Network (ALIGN)!
