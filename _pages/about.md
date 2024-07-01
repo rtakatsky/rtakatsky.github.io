@@ -14,7 +14,6 @@ news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-[(日本語)](./about_ja)
 
 [My CV](https://docs.google.com/document/d/19x09i3E-xeesyP8ABxpaU3jhS7VaaDP-AXuaZmlof40/edit?usp=sharing)
 
@@ -25,3 +24,5 @@ My main research interests are consciousness and AI Alignment. These are coming 
 Through involving in AI alignment I am also growing my interest for Effective Altruism and Rationalism.
 
 During my free time I enjoy playing Bossa nova and playing with my pet dog (Moffy). 
+
+[(日本語版)](./about_ja)
