@@ -1,0 +1,6 @@
+<dl class="news">
+{%- for item in site.data.news limit: 10 %}
+  <dt>{{ item.when }}</dt>
+  <dd>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</dd>
+{%- endfor %}
+</dl>

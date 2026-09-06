@@ -1,0 +1,203 @@
+/* Ryota Takatsuki — site stylesheet. No framework, no JavaScript. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #fbfaf6;
+  --ink: #1e1c19;
+  --muted: #6d675e;
+  --rule: #e3ded4;
+  --accent: #8a3b2a;
+  --accent-soft: #f3e6e1;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Arial, sans-serif;
+  --measure: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171614;
+    --ink: #e9e4da;
+    --muted: #a39d92;
+    --rule: #2e2b26;
+    --accent: #e0907a;
+    --accent-soft: #2c211d;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Header */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  max-width: var(--measure);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 0;
+  font-family: var(--sans);
+}
+.wordmark {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.site-nav { display: flex; flex-wrap: wrap; gap: 1.1rem; font-size: 0.9rem; margin-left: auto; }
+.site-nav a { text-decoration: none; color: var(--muted); }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); }
+.site-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.35em; }
+
+/* Main column */
+.content {
+  flex: 1;
+  max-width: var(--measure);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+}
+h1 { font-size: 1.9rem; letter-spacing: -0.01em; }
+.page-title { margin-bottom: 1.5rem; }
+h2 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2.75rem 0 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+h3 { font-size: 1.05rem; margin: 1.75rem 0 0.6rem; }
+p { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.2rem; margin: 0 0 1rem; }
+li { margin-bottom: 0.55rem; }
+li::marker { color: var(--muted); }
+em { font-style: italic; }
+strong { font-weight: 600; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+
+/* Home: profile block */
+.profile {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem 2rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+.profile h1 { margin-bottom: 0.1rem; }
+.name-ja { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); margin: 0 0 0.9rem; }
+.profile-text > p:last-child { margin-bottom: 0; }
+.profile .role {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 0.25rem;
+}
+.portrait {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+@media (max-width: 560px) {
+  .profile { grid-template-columns: 1fr; }
+  .profile-text { order: 2; }
+  .portrait { width: 110px; height: 110px; }
+}
+
+/* Links row */
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.links li { margin: 0; }
+
+/* News list */
+.news {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.7rem;
+  margin: 0 0 1rem;
+}
+.news dt {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-top: 0.2rem;
+  white-space: nowrap;
+}
+.news dd { margin: 0; }
+@media (max-width: 480px) {
+  .news { grid-template-columns: 1fr; row-gap: 0.15rem; }
+  .news dd { margin-bottom: 0.7rem; }
+}
+
+/* Publication lists */
+.pubs li, .content > ul > li { padding-left: 0.1rem; }
+.selected li { margin-bottom: 0.8rem; }
+.selected .venue { color: var(--muted); }
+
+/* Footer and small print */
+.meta, .site-footer {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.meta { margin-top: 3rem; }
+.site-footer {
+  max-width: var(--measure);
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 2rem;
+  border-top: 1px solid var(--rule);
+}
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.site-footer p { margin: 0; }
+

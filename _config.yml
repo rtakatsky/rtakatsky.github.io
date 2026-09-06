@@ -1,0 +1,46 @@
+# Site settings. Built natively by GitHub Pages (no custom plugins, no CI).
+title: Ryota Takatsuki
+description: Ph.D. student at the Sussex Centre for Consciousness Science, University of Sussex, working on mechanistic interpretability and consciousness science.
+url: https://rtakatsky.github.io
+baseurl: ""
+
+email: R.Takatsuki@sussex.ac.uk
+links:
+  scholar: https://scholar.google.com/citations?user=StciZjoAAAAJ
+  github: https://github.com/rtakatsky
+  x: https://x.com/rtakatsky
+  linkedin: https://www.linkedin.com/in/ryota-takatsuki-8a4697212
+  bluesky: https://bsky.app/profile/rtakatsky.bsky.social
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+
+plugins:
+  - jekyll-sitemap
+
+# Disable GitHub Pages' automatic behaviours we don't want.
+titles_from_headings:
+  enabled: false
+readme_index:
+  enabled: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - scripts
+  - vendor
+  - .bundle
+
+# GitHub Pages would otherwise inject its default Primer theme.
+theme: null

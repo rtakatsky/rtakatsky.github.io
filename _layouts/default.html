@@ -1,0 +1,51 @@
+{%- assign is_home = false -%}
+{%- if page.url == "/" -%}{%- assign is_home = true -%}{%- endif -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <title>{% if is_home %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta property="og:title" content="{% if is_home %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/profile.jpg' | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/img/favicon.png' | relative_url }}" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    {%- unless is_home %}
+    <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    {%- endunless %}
+    <nav class="site-nav" aria-label="Site">
+      <a href="{{ '/' | relative_url }}"{% if is_home %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a>
+      <a href="{{ '/assets/cv.pdf' | relative_url }}">CV (PDF)</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    {%- unless is_home %}
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- endunless %}
+    {{ content }}
+    {%- if page.synced %}
+    <p class="meta">Updated {{ page.synced }}</p>
+    {%- endif %}
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ site.time | date: "%Y" }} Ryota Takatsuki
+      · <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      · <a href="https://github.com/rtakatsky/rtakatsky.github.io">Source</a></p>
+  </footer>
+</body>
+</html>

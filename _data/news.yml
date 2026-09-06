@@ -1,0 +1,23 @@
+# Newest first. Facts and URLs come from ~/academic-portfolio (profile/ and the
+# publication/presentation READMEs). Plain past tense.
+
+- when: Aug 2026
+  text: 'Two papers accepted at EMNLP 2026: "(How) Do MLLMs Report Bistable Images Like Humans?" (main conference, first author; [code](https://github.com/rtakatsky/mllm-bistable-images)) and "In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access?" (Findings; [code](https://github.com/AokiKoshiro/in-context-neurofeedback)).'
+- when: Jul 2026
+  text: 'Our paper on in-context neurofeedback was selected as a spotlight at the Trustworthy AI for Good workshop at ICML 2026 in Seoul ([code](https://github.com/AokiKoshiro/in-context-neurofeedback)).'
+- when: Jul 2026
+  text: 'Presented a poster, "Do Autoregressive LLMs Exhibit Postdiction-Like Integration of Later Tokens?", at [ASSC 29](https://theassc.org/assc-29/) in Santiago, Chile, supported by an ASSC 29 Travel Award.'
+- when: '2026'
+  text: 'Our survey "[Mechanistic Interpretability: A New Trend in Interpretability Research](https://doi.org/10.1527/tjsai.41-4_AN40-D)" (in Japanese, with Koshiro Aoki, Gouki Minegishi, and Hyunsoo Cho) received the [JSAI 40th Anniversary Commemorative Paper Award, Best Paper](https://www.ai-gakkai.or.jp/about/award/jsai_award-paper/).'
+- when: Oct 2025
+  text: '"[Meta-representations as representations of processes](https://doi.org/10.1093/nc/niaf038)" (with Ryota Kanai and Ippei Fujisawa) was published in Neuroscience of Consciousness.'
+- when: Oct 2025
+  text: 'Our Academist Prize (5th cohort) crowdfunding project with Shosuke Nishimoto, "[Understanding the World as Perceived by AI](https://academist-cf.com/projects/393?lang=en)", closed with 238 supporters and 192% of its goal.'
+- when: Sep 2025
+  text: 'Started my Ph.D. at the [Sussex Centre for Consciousness Science](https://www.sussex.ac.uk/research/centres/sussex-centre-for-consciousness-science/), University of Sussex, supervised by Anil Seth and Christopher Buckley.'
+- when: Jun 2025
+  text: '"[Decoding Vision Transformers: the Diffusion Steering Lens](https://arxiv.org/abs/2504.13763)" appeared at the First Workshop on Mechanistic Interpretability for Vision at CVPR 2025.'
+- when: May 2025
+  text: 'Gave a talk on [reverse-engineering the Kanizsa illusion in Vision Transformers](https://doi.org/10.11517/pjsai.JSAI2025.0_3L6OS3204) at JSAI 2025 in Osaka, where I also served on the organizing committee of the organized session on mechanistic interpretability.'
+- when: Jun 2024
+  text: 'Joined the [AI Alignment Network](https://www.aialign.net/) as a research fellow.'
