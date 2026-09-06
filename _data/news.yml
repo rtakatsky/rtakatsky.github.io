@@ -6,7 +6,7 @@
 - when: Jul 2026
   text: 'Our paper on in-context neurofeedback was selected as a spotlight at the Trustworthy AI for Good workshop at ICML 2026 in Seoul ([code](https://github.com/AokiKoshiro/in-context-neurofeedback)).'
 - when: Jul 2026
-  text: 'Presented a poster, "Do Autoregressive LLMs Exhibit Postdiction-Like Integration of Later Tokens?", at [ASSC 29](https://theassc.org/assc-29/) in Santiago, Chile, supported by an ASSC 29 Travel Award ([program](https://theassc.org/wp-content/uploads/2026/07/Podium-ASSC-2026-program-v105-July-1v.3.pdf)).'
+  text: 'Presented a poster, "Do Autoregressive LLMs Exhibit Postdiction-Like Integration of Later Tokens?", at [ASSC 29](https://theassc.org/wp-content/uploads/2026/07/Podium-ASSC-2026-program-v105-July-1v.3.pdf) in Santiago, Chile, supported by an ASSC 29 Travel Award.'
 - when: '2026'
   text: 'Our survey "[Mechanistic Interpretability: A New Trend in Interpretability Research](https://doi.org/10.1527/tjsai.41-4_AN40-D)" (in Japanese, with Koshiro Aoki, Gouki Minegishi, and Hyunsoo Cho) received the [JSAI 40th Anniversary Commemorative Paper Award, Best Paper](https://www.ai-gakkai.or.jp/about/award/jsai_award-paper/).'
 - when: Oct 2025
