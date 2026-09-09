@@ -18,7 +18,7 @@ scripts/sync-portfolio.py    Copies content from ../academic-portfolio
 
 ## Updating content
 
-1. Update facts in `~/academic-portfolio` (`profile/`, then regenerate `cv/cv.pdf` there).
+1. Update facts in `~/Research/academic-portfolio` (`profile/`, then regenerate `cv/cv.pdf` there).
 2. Run `python3 scripts/sync-portfolio.py`. It rewrites the publications page, copies the CV PDF, and warns about any `[TODO]` markers it had to drop.
 3. Add news to `_data/news.yml` and adjust the bio in `index.md` as needed.
 4. Preview, then push to `master`. GitHub Pages rebuilds the site in about a minute.

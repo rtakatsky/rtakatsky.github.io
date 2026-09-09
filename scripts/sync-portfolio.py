@@ -15,7 +15,7 @@ import shutil
 import sys
 
 SITE = pathlib.Path(__file__).resolve().parent.parent
-PORTFOLIO = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "~/academic-portfolio").expanduser()
+PORTFOLIO = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "~/Research/academic-portfolio").expanduser()
 TODAY = datetime.date.today().isoformat()
 
 TODO_RE = re.compile(r",?\s*\[TODO:[^\]]*\]")
