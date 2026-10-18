@@ -8,6 +8,7 @@
   --rule: #e3ded4;
   --accent: #8a3b2a;
   --accent-soft: #f3e6e1;
+  --shade: rgba(30, 28, 25, 0.14);
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Arial, sans-serif;
   --measure: 42rem;
@@ -21,6 +22,7 @@
     --rule: #2e2b26;
     --accent: #e0907a;
     --accent-soft: #2c211d;
+    --shade: rgba(0, 0, 0, 0.55);
   }
 }
 
@@ -157,13 +159,29 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 }
 .links li { margin: 0; }
 
-/* News list */
+/* News list: fixed height, scrolls. The two local gradients cover the
+   scroll shadows at either end, so a shadow shows only where more items are. */
+.news-scroll {
+  max-height: 20rem;
+  overflow-y: auto;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.6rem 0.35rem 0;
+  border-bottom: 1px solid var(--rule);
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+  background:
+    linear-gradient(var(--bg) 30%, transparent) top / 100% 2.5rem no-repeat local,
+    linear-gradient(transparent, var(--bg) 70%) bottom / 100% 2.5rem no-repeat local,
+    radial-gradient(farthest-side at 50% 0, var(--shade), transparent) top / 100% 0.8rem no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, var(--shade), transparent) bottom / 100% 0.8rem no-repeat scroll;
+}
+.news-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .news {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 1.25rem;
   row-gap: 0.7rem;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 .news dt {
   font-family: var(--sans);

@@ -1,6 +1,8 @@
+<div class="news-scroll" role="region" aria-label="News" tabindex="0">
 <dl class="news">
 {%- for item in site.data.news limit: 10 %}
   <dt>{{ item.when }}</dt>
   <dd>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</dd>
 {%- endfor %}
 </dl>
+</div>
