@@ -2,21 +2,21 @@
 title: Publications
 permalink: /publications/
 description: Publications and presentations by Ryota Takatsuki.
-synced: 2026-09-06
+synced: 2026-10-18
 ---
 
 My name is shown in bold.
 
 ## Journal articles
 
-- Kanai, R., **Takatsuki, R.**\* (corresponding author), & Fujisawa, I. (2025). Meta-representations as representations of processes. *Neuroscience of Consciousness*, 2025(1), niaf038. [DOI](https://doi.org/10.1093/nc/niaf038)
+- Kanai, R., **Takatsuki, R.**\* (corresponding author), & Fujisawa, I. (2025). Meta-representations as representations of processes. *Neuroscience of Consciousness*, 2025(1), niaf038. [DOI](https://doi.org/10.1093/nc/niaf038) · [Code](https://github.com/rtakatsky/metarep)
 - Aoki, K., **Takatsuki, R.**, Minegishi, G., & Cho, H. (2026). Mechanistic Interpretability: A New Trend in Interpretability Research (in Japanese). *Transactions of the Japanese Society for Artificial Intelligence*, 41(4), 1–13 (JSAI 40th-anniversary special issue). JSAI 40th Anniversary Commemorative Paper Award — Best Paper. [DOI](https://doi.org/10.1527/tjsai.41-4_AN40-D)
 
 ## Conference and workshop papers
 
-- **Takatsuki, R.**, Doi, T., Watahiki, A., Seth, A. K., & Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? *Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)*, main conference, Budapest, Hungary, Oct 24–29, 2026. To appear. [Code](https://github.com/rtakatsky/mllm-bistable-images)
-- Aoki, K., **Takatsuki, R.**, Minegishi, G., Haruki, Y., & Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? *Findings of the Association for Computational Linguistics: EMNLP 2026*, Budapest, Hungary, Oct 24–29, 2026. To appear. Earlier version: *Trustworthy AI for Good (AI4GOOD) Workshop @ ICML 2026*, Seoul, South Korea, Jul 10, 2026 (**spotlight**).
-- **Takatsuki, R.**, Joseph, S., Fujisawa, I., & Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. *The First Workshop on Mechanistic Interpretability for Vision, CVPR 2025* (IEEE CVPRW 2025 proceedings, pp. 4819–4824). [DOI](https://doi.org/10.1109/CVPRW67362.2025.00470) · [arXiv](https://arxiv.org/abs/2504.13763)
+- **Takatsuki, R.**, Doi, T., Watahiki, A., Seth, A. K., & Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? *Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)*, main conference, Budapest, Hungary, Oct 24–29, 2026. To appear. [arXiv](https://arxiv.org/abs/2609.13254) · [Code](https://github.com/rtakatsky/mllm-bistable-images)
+- Aoki, K., **Takatsuki, R.**, Minegishi, G., Haruki, Y., & Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? *Findings of the Association for Computational Linguistics: EMNLP 2026*, Budapest, Hungary, Oct 24–29, 2026. To appear. Earlier version: *Trustworthy AI for Good (AI4GOOD) Workshop @ ICML 2026*, Seoul, South Korea, Jul 10, 2026 (**spotlight**). [arXiv](https://arxiv.org/abs/2609.00904) · [Code](https://github.com/AokiKoshiro/in-context-neurofeedback)
+- **Takatsuki, R.**, Joseph, S., Fujisawa, I., & Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. *The First Workshop on Mechanistic Interpretability for Vision, CVPR 2025* (IEEE CVPRW 2025 proceedings, pp. 4819–4824). [DOI](https://doi.org/10.1109/CVPRW67362.2025.00470) · [arXiv](https://arxiv.org/abs/2504.13763) · [Code](https://github.com/rtakatsky/DSLens)
 
 ## Technical reports
 

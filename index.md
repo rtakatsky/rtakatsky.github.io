@@ -26,10 +26,10 @@ Before Sussex, I was a research intern in [Ryota Kanai](https://research.araya.o
 ## Selected publications
 
 <ul class="selected">
-  <li><strong>Takatsuki, R.</strong>, Doi, T., Watahiki, A., Seth, A. K., &amp; Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? <span class="venue">EMNLP 2026, main conference (to appear).</span> <a href="https://github.com/rtakatsky/mllm-bistable-images">Code</a></li>
-  <li>Kanai, R., <strong>Takatsuki, R.</strong>, &amp; Fujisawa, I. (2025). Meta-representations as representations of processes. <span class="venue">Neuroscience of Consciousness, 2025(1), niaf038.</span> <a href="https://doi.org/10.1093/nc/niaf038">DOI</a></li>
-  <li><strong>Takatsuki, R.</strong>, Joseph, S., Fujisawa, I., &amp; Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. <span class="venue">Workshop on Mechanistic Interpretability for Vision, CVPR 2025.</span> <a href="https://arxiv.org/abs/2504.13763">arXiv</a></li>
-  <li>Aoki, K., <strong>Takatsuki, R.</strong>, Minegishi, G., Haruki, Y., &amp; Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? <span class="venue">Findings of EMNLP 2026 (to appear).</span> <a href="https://github.com/AokiKoshiro/in-context-neurofeedback">Code</a></li>
+  <li><strong>Takatsuki, R.</strong>, Doi, T., Watahiki, A., Seth, A. K., &amp; Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? <span class="venue">EMNLP 2026, main conference (to appear).</span> <a href="https://arxiv.org/abs/2609.13254">arXiv</a> · <a href="https://github.com/rtakatsky/mllm-bistable-images">Code</a></li>
+  <li>Kanai, R., <strong>Takatsuki, R.</strong>, &amp; Fujisawa, I. (2025). Meta-representations as representations of processes. <span class="venue">Neuroscience of Consciousness, 2025(1), niaf038.</span> <a href="https://doi.org/10.1093/nc/niaf038">DOI</a> · <a href="https://github.com/rtakatsky/metarep">Code</a></li>
+  <li><strong>Takatsuki, R.</strong>, Joseph, S., Fujisawa, I., &amp; Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. <span class="venue">Workshop on Mechanistic Interpretability for Vision, CVPR 2025.</span> <a href="https://arxiv.org/abs/2504.13763">arXiv</a> · <a href="https://github.com/rtakatsky/DSLens">Code</a></li>
+  <li>Aoki, K., <strong>Takatsuki, R.</strong>, Minegishi, G., Haruki, Y., &amp; Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? <span class="venue">Findings of EMNLP 2026 (to appear).</span> <a href="https://arxiv.org/abs/2609.00904">arXiv</a> · <a href="https://github.com/AokiKoshiro/in-context-neurofeedback">Code</a></li>
 </ul>
 
 [All publications and presentations →](/publications/)
