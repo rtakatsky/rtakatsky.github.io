@@ -8,7 +8,7 @@ permalink: /
 # Ryota Takatsuki
 <p class="name-ja" lang="ja">高槻 瞭大</p>
 
-I am a Ph.D. student at the [Sussex Centre for Consciousness Science](https://www.sussex.ac.uk/research/centres/sussex-centre-for-consciousness-science/), University of Sussex, supervised by [Anil Seth](https://www.anilseth.com/) and [Christopher Buckley](https://christopherlbuckley.com/), and a research fellow at the [AI Alignment Network](https://www.aialign.net/) in Tokyo.
+I am a Ph.D. student at [Sussex Centre for Consciousness Science](https://www.sussex.ac.uk/research/centres/sussex-centre-for-consciousness-science/), University of Sussex, supervised by [Anil Seth](https://www.anilseth.com/) and [Christopher Buckley](https://christopherlbuckley.com/), and a research fellow at [AI Alignment Network](https://www.aialign.net/) in Tokyo.
   </div>
   <img class="portrait" src="/assets/img/profile.jpg" alt="Ryota Takatsuki" width="600" height="600">
 </div>

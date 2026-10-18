@@ -14,10 +14,10 @@
 - when: Oct 2025
   text: 'Our Academist Prize (5th cohort, 2025) crowdfunding project with Shosuke Nishimoto, "[Understanding the World as Perceived by AI](https://academist-cf.com/projects/393?lang=en)", closed with 238 supporters and 192% of its goal.'
 - when: Sep 2025
-  text: 'Started my Ph.D. at the [Sussex Centre for Consciousness Science](https://www.sussex.ac.uk/research/centres/sussex-centre-for-consciousness-science/), University of Sussex, supervised by Anil Seth and Christopher Buckley.'
+  text: 'Started my Ph.D. at [Sussex Centre for Consciousness Science](https://www.sussex.ac.uk/research/centres/sussex-centre-for-consciousness-science/), University of Sussex, supervised by Anil Seth and Christopher Buckley.'
 - when: Jun 2025
   text: '"[Decoding Vision Transformers: the Diffusion Steering Lens](https://arxiv.org/abs/2504.13763)" appeared at the First Workshop on Mechanistic Interpretability for Vision at CVPR 2025 ([code](https://github.com/rtakatsky/DSLens)).'
 - when: May 2025
   text: 'Gave a talk on [reverse-engineering the Kanizsa illusion in Vision Transformers](https://doi.org/10.11517/pjsai.JSAI2025.0_3L6OS3204) at JSAI 2025 in Osaka, where I also served on the organizing committee of the organized session on mechanistic interpretability.'
 - when: Jun 2024
-  text: 'Joined the [AI Alignment Network](https://www.aialign.net/) as a research fellow.'
+  text: 'Joined [AI Alignment Network](https://www.aialign.net/) as a research fellow.'
