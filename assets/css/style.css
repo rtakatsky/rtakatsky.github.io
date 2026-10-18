@@ -1,7 +1,23 @@
 /* Ryota Takatsuki — site stylesheet. No framework, no JavaScript. */
 
+/* Dark by default. The header's theme switch (a checkbox, no script)
+   turns on light mode through :has(). */
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
+  --bg: #171614;
+  --ink: #e9e4da;
+  --muted: #a39d92;
+  --rule: #2e2b26;
+  --accent: #e0907a;
+  --accent-soft: #2c211d;
+  --shade: rgba(0, 0, 0, 0.55);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Arial, sans-serif;
+  --measure: 42rem;
+}
+
+:root:has(#theme-light:checked) {
+  color-scheme: light;
   --bg: #fbfaf6;
   --ink: #1e1c19;
   --muted: #6d675e;
@@ -9,21 +25,6 @@
   --accent: #8a3b2a;
   --accent-soft: #f3e6e1;
   --shade: rgba(30, 28, 25, 0.14);
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", Georgia, serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Arial, sans-serif;
-  --measure: 42rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #171614;
-    --ink: #e9e4da;
-    --muted: #a39d92;
-    --rule: #2e2b26;
-    --accent: #e0907a;
-    --accent-soft: #2c211d;
-    --shade: rgba(0, 0, 0, 0.55);
-  }
 }
 
 * { box-sizing: border-box; }
@@ -78,6 +79,48 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .site-nav a { text-decoration: none; color: var(--muted); }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); }
 .site-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.35em; }
+
+/* Theme switch: a visually hidden checkbox and its label, which shows a sun
+   in dark mode and a moon in light mode. Shown only where :has() works. */
+.theme-input, .theme-switch { display: none; }
+@supports selector(:has(*)) {
+  .theme-input {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .theme-switch { display: inline-flex; }
+}
+.theme-switch {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: -0.25rem -0.5rem -0.25rem 0;
+  border-radius: 50%;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-switch:hover { color: var(--ink); }
+.theme-input:focus-visible + .theme-switch { outline: 2px solid var(--accent); outline-offset: 2px; }
+.theme-switch svg { width: 1.1rem; height: 1.1rem; }
+.theme-switch .moon,
+:root:has(#theme-light:checked) .theme-switch .sun { display: none; }
+:root:has(#theme-light:checked) .theme-switch .moon { display: block; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 
 /* Main column */
 .content {

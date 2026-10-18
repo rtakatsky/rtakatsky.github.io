@@ -22,7 +22,7 @@ Personal academic site of Ryota Takatsuki, served by GitHub Pages at https://rta
 ## Design and security constraints
 
 - No JavaScript, no external scripts, fonts, or images. The Content-Security-Policy meta tag in `_layouts/default.html` forbids inline styles, so put all styling in `assets/css/style.css`.
-- Light and dark modes come from `prefers-color-scheme`; every color must be defined in both.
+- Dark mode is the default regardless of the OS setting. The header's theme switch is a checkbox that turns on light mode through `:root:has(#theme-light:checked)` in `style.css`. It uses no script, so the choice resets on each page load. Every color must be defined for both modes.
 - Keep the single-column, text-first layout. Do not add a framework.
 - Do not add GitHub workflows. Deployment is GitHub Pages building `master` directly.
 
