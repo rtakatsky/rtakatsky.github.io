@@ -187,13 +187,13 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
   .portrait { width: 110px; height: 110px; }
 }
 
-/* Links row: icon-only links under the affiliation. Each link carries a
-   title and a visually hidden label. The negative margins line the first
-   icon up with the text edge and offset the links' own padding. */
+/* Links row: icon-only links under the name. Each link carries a title and
+   a visually hidden label. The negative margins line the first icon up
+   with the text edge and offset the links' own padding. */
 .links {
   list-style: none;
   padding: 0;
-  margin: -0.3rem 0 1rem -0.4rem;
+  margin: -0.7rem 0 0.5rem -0.4rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.1rem;
