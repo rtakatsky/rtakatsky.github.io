@@ -8,9 +8,7 @@
   --ink: #e9e4da;
   --muted: #a39d92;
   --rule: #2e2b26;
-  --accent: #e0907a;
-  --accent-soft: #2c211d;
-  --shade: rgba(0, 0, 0, 0.55);
+  --accent: #c6a5e6;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Arial, sans-serif;
   --measure: 42rem;
@@ -22,9 +20,7 @@
   --ink: #1e1c19;
   --muted: #6d675e;
   --rule: #e3ded4;
-  --accent: #8a3b2a;
-  --accent-soft: #f3e6e1;
-  --shade: rgba(30, 28, 25, 0.14);
+  --accent: #6f3f8f;
 }
 
 * { box-sizing: border-box; }
@@ -169,7 +165,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 }
 .profile h1 { margin-bottom: 0.1rem; }
 .name-ja { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); margin: 0 0 0.9rem; }
-.profile-text > p:last-child { margin-bottom: 0; }
+.profile-text > :last-child { margin-bottom: 0; }
 .profile .role {
   font-family: var(--sans);
   font-size: 0.92rem;
@@ -182,6 +178,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
   object-fit: cover;
   border-radius: 50%;
   display: block;
+  /* A hairline ring, so the circle keeps its edge where the photo is as dark as the page. */
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--muted) 30%, var(--bg));
 }
 @media (max-width: 560px) {
   .profile { grid-template-columns: 1fr; }
@@ -189,34 +187,52 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
   .portrait { width: 110px; height: 110px; }
 }
 
-/* Links row */
+/* Links row: icon-only links under the affiliation. Each link carries a
+   title and a visually hidden label. The negative margins line the first
+   icon up with the text edge and offset the links' own padding. */
 .links {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem;
+  margin: -0.3rem 0 1rem -0.4rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.2rem;
-  font-family: var(--sans);
-  font-size: 0.9rem;
+  gap: 0.1rem;
 }
 .links li { margin: 0; }
+.links a {
+  display: flex;
+  padding: 0.4rem;
+  border-radius: 4px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.links a:hover { color: var(--accent); }
+.links a:focus-visible { outline-offset: 0; }
+.links svg { display: block; width: 1.2rem; height: 1.2rem; fill: currentColor; }
 
-/* News list: fixed height, scrolls. The two local gradients cover the
-   scroll shadows at either end, so a shadow shows only where more items are. */
+/* News list: fixed height, scrolls. The box starts at the heading's rule
+   (the negative margin undoes the heading's bottom margin), so scrolled
+   text slips under that line. A strip that sticks to the bottom edge fades
+   the text into the page; the list's bottom padding lets the last item
+   scroll clear of it. */
 .news-scroll {
-  max-height: 20rem;
+  --fade: 2.5rem;
+  max-height: 21rem;
   overflow-y: auto;
-  margin: 0 0 1rem;
-  padding: 0.35rem 0.6rem 0.35rem 0;
-  border-bottom: 1px solid var(--rule);
+  margin: -0.9rem 0 1rem;
+  padding: 1.25rem 0.6rem 0 0;
   scrollbar-width: thin;
   scrollbar-color: var(--rule) transparent;
-  background:
-    linear-gradient(var(--bg) 30%, transparent) top / 100% 2.5rem no-repeat local,
-    linear-gradient(transparent, var(--bg) 70%) bottom / 100% 2.5rem no-repeat local,
-    radial-gradient(farthest-side at 50% 0, var(--shade), transparent) top / 100% 0.8rem no-repeat scroll,
-    radial-gradient(farthest-side at 50% 100%, var(--shade), transparent) bottom / 100% 0.8rem no-repeat scroll;
+}
+.news-scroll::after {
+  content: "";
+  display: block;
+  position: sticky;
+  bottom: 0;
+  height: var(--fade);
+  margin-top: calc(-1 * var(--fade));
+  background: linear-gradient(transparent, var(--bg));
+  pointer-events: none;
 }
 .news-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .news {
@@ -225,6 +241,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
   column-gap: 1.25rem;
   row-gap: 0.7rem;
   margin: 0;
+  padding-bottom: var(--fade);
 }
 .news dt {
   font-family: var(--sans);
@@ -235,6 +252,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 }
 .news dd { margin: 0; }
 @media (max-width: 480px) {
+  .news-scroll { max-height: 25rem; }
   .news { grid-template-columns: 1fr; row-gap: 0.15rem; }
   .news dd { margin-bottom: 0.7rem; }
 }
@@ -242,7 +260,6 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 /* Publication lists */
 .pubs li, .content > ul > li { padding-left: 0.1rem; }
 .selected li { margin-bottom: 0.8rem; }
-.selected .venue { color: var(--muted); }
 
 /* Footer and small print */
 .meta, .site-footer {
@@ -255,10 +272,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
   max-width: var(--measure);
   width: 100%;
   margin: 0 auto;
-  padding: 1.25rem 1.25rem 2rem;
-  border-top: 1px solid var(--rule);
+  padding: 0 1.25rem 2rem;
 }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
-.site-footer p { margin: 0; }
+/* The rule sits on the paragraph so that it is as wide as the text column. */
+.site-footer p { margin: 0; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
 

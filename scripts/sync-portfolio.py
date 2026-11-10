@@ -84,7 +84,8 @@ def write(rel: str, text: str) -> None:
 
 def main() -> None:
     body = publications_body()
-    note = "My name is shown in bold.\n\n"
+    # Jekyll expands the Liquid tag, so the URL stays in _config.yml only.
+    note = "My name is shown in bold. See also my [Google Scholar profile]({{ site.links.scholar }}).\n\n"
     write("publications.md", front_matter(
         title="Publications", permalink="/publications/",
         description="Publications and presentations by Ryota Takatsuki.", synced=TODAY) + note + body)

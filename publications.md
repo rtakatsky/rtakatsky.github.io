@@ -2,10 +2,10 @@
 title: Publications
 permalink: /publications/
 description: Publications and presentations by Ryota Takatsuki.
-synced: 2026-10-18
+synced: 2026-11-10
 ---
 
-My name is shown in bold.
+My name is shown in bold. See also my [Google Scholar profile]({{ site.links.scholar }}).
 
 ## Journal articles
 
