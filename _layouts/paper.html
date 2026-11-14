@@ -8,10 +8,17 @@ layout: default
   official page, arXiv, code, an X thread and the video. The arXiv, GitHub and
   X marks are from Simple Icons (CC0 1.0, https://simpleicons.org); the paper
   and play icons are drawn by hand. The video plays in the page (a plain
-  <video> element, allowed by media-src 'self' in the CSP).
+  <video> element, allowed by media-src 'self' in the CSP). Under "How to
+  cite", the bibliography and the BibTeX each select as a whole on one click
+  (user-select: all), so they copy without a script. A * after a name marks
+  the corresponding author; the note under the venue explains it.
 {%- endcomment -%}
 <p class="paper-authors">{{ page.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
-<p class="paper-venue">{{ page.venue_full | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+<p class="paper-venue">{{ page.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+  {%- if page.venue_extra %}<br>{{ page.venue_extra | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</p>
+{%- if page.corresponding %}
+<p class="heading-note paper-note">* Corresponding author</p>
+{%- endif %}
 
 <ul class="paper-icons">
   <li><a href="{{ page.official.url }}" title="Paper ({{ page.official.name }})"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M5.5 1.5h9l5 5v14.2a1.8 1.8 0 0 1-1.8 1.8H5.5a1.8 1.8 0 0 1-1.8-1.8V3.3a1.8 1.8 0 0 1 1.8-1.8zm8.3 1.8v4.5h4.4zM7 11h10v1.6H7zm0 3.4h10V16H7zm0 3.4h6.5v1.6H7z"/></svg><span>Paper</span></a></li>
@@ -68,7 +75,21 @@ layout: default
 </ul>
 {%- endif %}
 
-<h2>Cite</h2>
-<p class="cite">{{ page.cite | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+{%- if page.elsewhere %}
+<h2>Featured in</h2>
+<ul class="pubs">
+  {%- for e in page.elsewhere %}
+  <li>{{ e | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+
+<h2>How to cite</h2>
+<p class="cite-label">bibliography</p>
+<p class="bibliography">{{ page.bibliography | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+{%- if page.bibtex %}
+<p class="cite-label">bibtex</p>
+<pre class="bibtex"><code>{{ page.bibtex | escape }}</code></pre>
+{%- endif %}
 
 <p class="back"><a href="{{ '/' | relative_url }}#selected-publications">← Selected publications</a></p>

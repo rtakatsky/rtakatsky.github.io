@@ -5,12 +5,11 @@ description: "A logit lens for vision transformers: we decode what individual at
 order: 3
 year: 2025
 authors: "**Takatsuki, R.**, Joseph, S., Fujisawa, I., & Kanai, R."
-authors_short: "**Takatsuki, R.**, Joseph, S., Fujisawa, I., & Kanai, R."
+corresponding: false
 venue: "*Workshop on Mechanistic Interpretability for Vision, CVPR 2025*"
-venue_full: "*The First Workshop on Mechanistic Interpretability for Vision, CVPR 2025* (IEEE CVPRW 2025 proceedings, pp. 4819–4824)."
 official:
-  url: "https://openaccess.thecvf.com/content/CVPR2025W/MIV/html/Takatsuki_Decoding_Vision_Transformers_the_Diffusion_Steering_Lens_CVPRW_2025_paper.html"
-  name: "CVF Open Access"
+  url: "https://doi.org/10.1109/CVPRW67362.2025.00470"
+  name: "IEEE Xplore"
 links:
   - kind: "arxiv"
     url: "https://arxiv.org/abs/2504.13763"
@@ -26,5 +25,6 @@ figure:
   height: 537
   alt: "Figure 1 of the paper: schematic of the Diffusion Steering Lens."
   caption: "Figure 1 of the paper. Schematic of Diffusion Steering Lens. Visualizing the direct contribution of *h*<sub>*m*</sub> at layer *n*."
-cite: "**Takatsuki, R.**, Joseph, S., Fujisawa, I., & Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. *The First Workshop on Mechanistic Interpretability for Vision, CVPR 2025* (IEEE CVPRW 2025 proceedings, pp. 4819–4824)."
+bibliography: "Takatsuki, R., Joseph, S., Fujisawa, I., & Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. *The First Workshop on Mechanistic Interpretability for Vision, CVPR 2025* (IEEE CVPRW 2025 proceedings, pp. 4819–4824)."
+bibtex: "@inproceedings{Takatsuki_2025,\n    title = {Decoding Vision Transformers: The Diffusion Steering Lens},\n    author = {Takatsuki, Ryota and Joseph, Sonia and Fujisawa, Ippei and Kanai, Ryota},\n    booktitle = {2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},\n    pages = {4819--4824},\n    month = jun,\n    year = {2025},\n    publisher = {IEEE},\n    DOI = {10.1109/cvprw67362.2025.00470},\n    url = {http://dx.doi.org/10.1109/CVPRW67362.2025.00470}\n}"
 ---

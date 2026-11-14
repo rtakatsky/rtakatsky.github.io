@@ -5,11 +5,11 @@ description: Publications and presentations by Ryota Takatsuki.
 synced: 2026-11-14
 ---
 
-My name is shown in bold. See also my [Google Scholar profile]({{ site.links.scholar }}).
+My name is shown in bold, and \* marks the corresponding author. See also my [Google Scholar profile]({{ site.links.scholar }}).
 
 ## Journal articles
 
-- Kanai, R., **Takatsuki, R.**\* (corresponding author), & Fujisawa, I. (2025). Meta-representations as representations of processes. *Neuroscience of Consciousness*, 2025(1), niaf038. [DOI](https://doi.org/10.1093/nc/niaf038) · [Code](https://github.com/rtakatsky/metarep)
+- Kanai, R., **Takatsuki, R.**\*, & Fujisawa, I. (2025). Meta-representations as representations of processes. *Neuroscience of Consciousness*, 2025(1), niaf038. [DOI](https://doi.org/10.1093/nc/niaf038) · [Code](https://github.com/rtakatsky/metarep)
 - Aoki, K., **Takatsuki, R.**, Minegishi, G., & Cho, H. (2026). Mechanistic Interpretability: A New Trend in Interpretability Research (in Japanese). *Transactions of the Japanese Society for Artificial Intelligence*, 41(4), 1–13 (JSAI 40th-anniversary special issue). JSAI 40th Anniversary Commemorative Paper Award — Best Paper. [DOI](https://doi.org/10.1527/tjsai.41-4_AN40-D)
 
 ## Conference and workshop papers

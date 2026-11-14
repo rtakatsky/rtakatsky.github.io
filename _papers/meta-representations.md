@@ -4,10 +4,9 @@ title: "Meta-representations as representations of processes"
 description: "Meta-representations recast as representations of processes, with a proof of concept in deep networks."
 order: 2
 year: 2025
-authors: "Kanai, R., **Takatsuki, R.**\\* (corresponding author), & Fujisawa, I."
-authors_short: "Kanai, R., **Takatsuki, R.**, & Fujisawa, I."
-venue: "*Neuroscience of Consciousness*, 2025(1), niaf038"
-venue_full: "*Neuroscience of Consciousness*, 2025(1), niaf038."
+authors: "Kanai, R., **Takatsuki, R.**\\*, & Fujisawa, I."
+corresponding: true
+venue: "*Neuroscience of Consciousness*, 2025"
 official:
   url: "https://doi.org/10.1093/nc/niaf038"
   name: "Neuroscience of Consciousness"
@@ -24,5 +23,9 @@ figure:
   caption: "Figure 2 of the paper. Overall structure of the construction of meta-autoencoders."
 presentations:
   - "Oral presentation: **Takatsuki, R.**, Fujisawa, I., & Kanai, R. \"Qualia as Meta-Representations of Processes\". *ASSC 27*, Tokyo, Japan, Jul 4, 2024."
-cite: "Kanai, R., **Takatsuki, R.**\\* (corresponding author), & Fujisawa, I. (2025). Meta-representations as representations of processes. *Neuroscience of Consciousness*, 2025(1), niaf038."
+elsewhere:
+  - "[ActInf GuestStream 079.1](https://www.youtube.com/watch?v=7AtInJ-q7Hk): Ryota Kanai presents the paper (Active Inference Institute, livestream on YouTube, Apr 4, 2024)"
+  - "[Neuromatch Academy NeuroAI course](https://github.com/neuromatch/NeuroAI_Course/blob/main/tutorials/W2D5_Mysteries/further_reading.md): suggested further reading on higher-order theories, W2D5 \"Mysteries\""
+bibliography: "Kanai, R., Takatsuki, R., & Fujisawa, I. (2025). Meta-representations as representations of processes. *Neuroscience of Consciousness*, 2025(1), niaf038."
+bibtex: "@article{Kanai_2025,\n    title = {Meta-representations as representations of processes},\n    author = {Kanai, Ryota and Takatsuki, Ryota and Fujisawa, Ippei},\n    journal = {Neuroscience of Consciousness},\n    volume = {2025},\n    number = {1},\n    pages = {niaf038},\n    year = {2025},\n    publisher = {Oxford University Press (OUP)},\n    ISSN = {2057-2107},\n    DOI = {10.1093/nc/niaf038},\n    url = {http://dx.doi.org/10.1093/nc/niaf038}\n}"
 ---

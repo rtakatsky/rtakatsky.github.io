@@ -307,7 +307,10 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 
 /* A paper's page (_layouts/paper.html). */
 .paper-authors { margin: -0.8rem 0 0.3rem; }
-.paper-venue { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0; }
+.paper-venue { font-family: var(--sans); font-size: 0.85rem; line-height: 1.55; color: var(--muted); margin: 0; }
+/* The legend for the corresponding-author mark, small, under a heading or the venue. */
+.heading-note { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin: -0.4rem 0 1rem; }
+.paper-note { margin: 0.25rem 0 0; }
 /* Icon links with short labels (paper, arXiv, code, thread, video). The
    negative left margin lines the first icon up with the text edge. */
 .paper-icons {
@@ -354,14 +357,36 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 /* The explainer video: the browser's own player, no script. */
 .paper-video { width: 100%; height: auto; }
 .findings li { margin-bottom: 0.45rem; }
-.cite {
+/* "How to cite": a label over each block; one click selects a whole block
+   (no script), ready to copy. */
+.cite-label {
   font-family: var(--sans);
-  font-size: 0.85rem;
-  line-height: 1.55;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 1.2rem 0 0.4rem;
+}
+h2 + .cite-label { margin-top: 0; }
+.bibliography,
+.bibtex {
+  margin: 0;
   padding: 0.85rem 1rem;
   border: 1px solid var(--rule);
   border-radius: 6px;
+  cursor: text;
+  -webkit-user-select: all;
+  user-select: all;
 }
+.bibliography { font-family: var(--sans); font-size: 0.85rem; line-height: 1.6; }
+.bibtex {
+  overflow-x: auto;
+  background: color-mix(in srgb, var(--rule) 35%, var(--bg));
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.bibliography::selection, .bibliography *::selection,
+.bibtex::selection, .bibtex *::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
 .back { font-family: var(--sans); font-size: 0.88rem; margin-top: 2.5rem; }
 .back a { text-decoration: none; color: var(--muted); }
 .back a:hover { color: var(--accent); }

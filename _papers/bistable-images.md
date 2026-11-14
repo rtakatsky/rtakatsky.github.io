@@ -5,9 +5,8 @@ description: "Multimodal LLMs report bistable images in human-consistent ways; w
 order: 1
 year: 2026
 authors: "**Takatsuki, R.**, Doi, T., Watahiki, A., Seth, A. K., & Yanaka, H."
-authors_short: "**Takatsuki, R.**, Doi, T., Watahiki, A., Seth, A. K., & Yanaka, H."
+corresponding: false
 venue: "*EMNLP 2026*"
-venue_full: "*Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)*, pp. 39784–39814, Budapest, Hungary, Oct 24–29, 2026."
 official:
   url: "https://aclanthology.org/2026.emnlp-main.1744/"
   name: "ACL Anthology"
@@ -37,5 +36,6 @@ findings:
   - "Behavioral evidence that MLLM reports on bistable images are modulable and exclusive in human-consistent ways (duck–rabbit + Visual Anagrams)"
   - "Mechanistic account: competing image-token representations; distinct bottom-up vs. top-down modulation pathways; exclusive reporting linked to object-count encoding"
   - "Demonstrates that a human-like cognitive phenomenon can be realized through distinct internal mechanisms in MLLMs — questioning the validity of behavioral markers of consciousness applied to AI systems"
-cite: "**Takatsuki, R.**, Doi, T., Watahiki, A., Seth, A. K., & Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? *Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)*, pp. 39784–39814, Budapest, Hungary, Oct 24–29, 2026."
+bibliography: "Takatsuki, R., Doi, T., Watahiki, A., Seth, A. K., & Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? *Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)*, pp. 39784–39814, Budapest, Hungary, Oct 24–29, 2026."
+bibtex: "@inproceedings{takatsuki-etal-2026-mllms,\n    title = \"(How) Do {MLLM}s Report Bistable Images Like Humans?\",\n    author = \"Takatsuki, Ryota and Doi, Tomoki and Watahiki, Amane and Seth, Anil K and Yanaka, Hitomi\",\n    editor = \"Lee, Hung-Yi and Dev, Sunipa and Li, Junyi Jessy and Elliott, Desmond\",\n    booktitle = \"Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing\",\n    month = oct,\n    year = \"2026\",\n    address = \"Budapest, Hungary\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2026.emnlp-main.1744/\",\n    doi = \"10.18653/2026.emnlp-main.1744\",\n    pages = \"39784--39814\",\n    ISBN = \"979-8-89176-459-0\"\n}"
 ---

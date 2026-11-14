@@ -23,7 +23,7 @@ scripts/sync-portfolio.py    Copies content from ../academic-portfolio; SELECTED
 
 ## Updating content
 
-1. Update facts in `~/Research/academic-portfolio` (`profile/`, then regenerate `cv/cv.pdf` there). A selected publication's page also reads its folder README: the Links line, `TL;DR (website)`, `## Summary`, `## Main contributions` and `## Related presentations`.
+1. Update facts in `~/Research/academic-portfolio` (`profile/`, then regenerate `cv/cv.pdf` there). A selected publication's page also reads its folder README (the Links line, `TL;DR (website)`, `## Summary`, `## Main contributions`, `## Related presentations` and `## Elsewhere`) and the folder's `citation.bib` (the official BibTeX, shown under "How to cite").
 2. Run `python3 scripts/sync-portfolio.py`. It rewrites the publications page and the selected publications' pages, copies the CV PDF, and warns about any `[TODO]` markers it had to drop.
 3. To change which publications are selected, their order, the short venue shown on the home page, the official link, the figure, or the video, edit `SELECTED` at the top of the script and re-run it. Put images in `assets/img/papers/` (thumbnails 352 × 264, padded white) and videos in `assets/video/`.
 4. Add news to `_data/news.yml` and adjust the bio in `index.md` as needed.

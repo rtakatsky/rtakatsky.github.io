@@ -5,7 +5,7 @@ Generates:
   publications.md                       from profile/publications.md + profile/presentations.md
   _papers/<slug>.md                     one page per selected publication (see SELECTED), from
                                         profile/publications.md, profile/presentations.md and the
-                                        publication folder's README
+                                        publication folder's README and citation.bib
   assets/cv.pdf                         from cv/cv.pdf
 
 Usage: python3 scripts/sync-portfolio.py [path/to/academic-portfolio]
@@ -53,7 +53,7 @@ SELECTED = [
     {
         "folder": "2025-meta-representations",
         "slug": "meta-representations",
-        "venue": "*Neuroscience of Consciousness*, 2025(1), niaf038",
+        "venue": "*Neuroscience of Consciousness*, 2025",
         "official": {"label": "DOI", "name": "Neuroscience of Consciousness"},
         "thumb": "/assets/img/papers/meta-representations-thumb.jpg",
         # Figure 2 (Figure 1 exists only as three small panels). MinerU crop from
@@ -68,7 +68,9 @@ SELECTED = [
         "folder": "2025-diffusion-steering-lens",
         "slug": "diffusion-steering-lens",
         "venue": "*Workshop on Mechanistic Interpretability for Vision, CVPR 2025*",
-        "official": {"label": "CVF open access", "name": "CVF Open Access"},
+        # The DOI (IEEE Xplore), whose pages (4819–4824) match the citation and BibTeX; the CVF open-access
+        # page numbers the paper 4858–4863. The free full text is on arXiv, linked on the paper's page.
+        "official": {"label": "DOI", "name": "IEEE Xplore"},
         "thumb": "/assets/img/papers/diffusion-steering-lens-thumb.jpg",
         # Figure 1. MinerU crop from
         # ~/Research/literature/extracted/takatsuki_2025_diffusion_steering_lens/images/af4503b1….jpg
@@ -113,8 +115,28 @@ FIELD_RE = re.compile(r"^- \*\*(?P<name>[^*]+):\*\*\s*(?P<value>.*)$", re.M)
 LINK_RE = re.compile(r"\s*(?P<label>[^:|]+?)(?:\s*\([^)]*\))?:\s*(?P<url>https?://[^\s|]+)")
 TRAILING_LINKS_RE = re.compile(r"(?:\s*(?:·\s*)?\[[^\]]+\]\([^)]+\))+\s*$")
 CORRESPONDING_RE = re.compile(r"\\\*\s*\(corresponding author\)")
+EARLIER_RE = re.compile(r"\s*Earlier version:\s*(?P<rest>.*)$")
 
 warnings = []
+
+
+def compact_bibtex(text: str) -> str:
+    """One line per field. The ACL Anthology breaks author and editor lists over several lines;
+    join them (whitespace only: the fields and their values stay exactly as the source gives them)."""
+    lines = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if lines and stripped and not re.match(r"(@|\}|[A-Za-z]+\s*=)", stripped):
+            lines[-1] = lines[-1].rstrip() + " " + stripped
+        else:
+            lines.append(line.rstrip())
+    # Collapse the double spaces the Anthology puts before "and", leaving the indentation alone.
+    return "\n".join(re.sub(r"(?<=\S) {2,}(?=\S)", " ", line) for line in lines)
+
+
+def mark_corresponding(text: str) -> str:
+    """The site marks the corresponding author with * after the name (legend under the heading)."""
+    return CORRESPONDING_RE.sub(lambda _: "\\*", text)
 
 
 def clean(text: str, source: str) -> str:
@@ -155,8 +177,8 @@ def strip_h1(text: str) -> str:
 
 
 def publications_body() -> str:
-    pubs = clean(strip_h1(read("profile/publications.md")), "profile/publications.md")
-    pres = clean(strip_h1(read("profile/presentations.md")), "profile/presentations.md")
+    pubs = mark_corresponding(clean(strip_h1(read("profile/publications.md")), "profile/publications.md"))
+    pres = mark_corresponding(clean(strip_h1(read("profile/presentations.md")), "profile/presentations.md"))
     pres = re.sub(r"^## ", "### ", pres, flags=re.M)
     return pubs + "\n## Presentations\n\n" + pres
 
@@ -261,6 +283,26 @@ def paper_page(entry: dict, order: int) -> None:
     else:
         warnings.append(f"{folder}: the README title and the citation differ; the page shows the whole citation tail")
         venue_full = rest
+    # An earlier version (the ICN workshop spotlight) is shown on its own line under the short venue,
+    # by its venue name only; the citation under "How to cite" is the paper itself.
+    venue_extra = ""
+    earlier = EARLIER_RE.search(venue_full)
+    if earlier:
+        name = re.search(r"\*([^*]+)\*", earlier["rest"])
+        if name:
+            venue_extra = f"*{name.group(1)}*" + (" (spotlight)" if "spotlight" in earlier["rest"].lower() else "")
+        venue_full = venue_full[:earlier.start()].strip()
+    # "How to cite": one plain paragraph, without bold or the corresponding-author mark.
+    authors_plain = re.sub(r"\*\*(.+?)\*\*", r"\1", CORRESPONDING_RE.sub("", m["authors"]))
+    bibliography = f"{authors_plain} ({m['year']}). {title}{'' if title[-1] in '?!.' else '.'} {venue_full}"
+
+    bib = PORTFOLIO / "publications" / folder / "citation.bib"
+    bibtex = ""
+    if bib.exists():
+        bibtex = compact_bibtex("\n".join(line for line in bib.read_text(encoding="utf-8").splitlines()
+                                          if not line.lstrip().startswith("%")).strip())
+    else:
+        warnings.append(f"publications/{folder}/citation.bib not found; the page has no BibTeX")
 
     summary = readme_section(readme, "Summary")
     if "[TODO" in summary:
@@ -268,6 +310,9 @@ def paper_page(entry: dict, order: int) -> None:
     findings = [b[2:].strip() for b in readme_section(readme, "Main contributions").splitlines()
                 if b.startswith("- ") and "[TODO" not in b]
     talks = presentation_lines(re.findall(r"presentations/([\w-]+)/", readme_section(readme, "Related presentations")))
+    # Talks by others, media and teaching that feature the paper (README "## Elsewhere").
+    elsewhere = [b[2:].strip() for b in readme_section(readme, "Elsewhere").splitlines()
+                 if b.startswith("- ") and "[TODO" not in b]
 
     tldr = fields.get("TL;DR (website)", "")
     if not tldr or "[TODO" in tldr:
@@ -287,10 +332,10 @@ def paper_page(entry: dict, order: int) -> None:
         "description": tldr,
         "order": order,
         "year": int(m["year"]),
-        "authors": m["authors"],
-        "authors_short": CORRESPONDING_RE.sub("", m["authors"]),
+        "authors": mark_corresponding(m["authors"]),
+        "corresponding": bool(CORRESPONDING_RE.search(m["authors"])),
         "venue": entry["venue"],
-        "venue_full": venue_full,
+        "venue_extra": venue_extra,
         "official": {"url": official, "name": entry["official"]["name"]},
         "links": icons,
         "tldr": tldr,
@@ -300,7 +345,9 @@ def paper_page(entry: dict, order: int) -> None:
         "video": video,
         "findings": findings,
         "presentations": talks,
-        "cite": cite,
+        "elsewhere": elsewhere,
+        "bibliography": bibliography,
+        "bibtex": bibtex,
     }
     note = f"# GENERATED by scripts/sync-portfolio.py from academic-portfolio/{source} — do not edit by hand."
     write(f"_papers/{slug}.md", "---\n" + note + "\n" + "\n".join(yaml_lines(data)) + "\n---\n")
@@ -309,7 +356,8 @@ def paper_page(entry: dict, order: int) -> None:
 def main() -> None:
     body = publications_body()
     # Jekyll expands the Liquid tag, so the URL stays in _config.yml only.
-    note = "My name is shown in bold. See also my [Google Scholar profile]({{ site.links.scholar }}).\n\n"
+    note = ("My name is shown in bold, and \\* marks the corresponding author. "
+            "See also my [Google Scholar profile]({{ site.links.scholar }}).\n\n")
     write("publications.md", front_matter(
         title="Publications", permalink="/publications/",
         description="Publications and presentations by Ryota Takatsuki.", synced=TODAY) + note + body)

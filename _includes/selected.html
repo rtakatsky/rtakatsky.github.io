@@ -5,13 +5,17 @@
   the official page (journal or proceedings).
 {%- endcomment -%}
 {%- assign papers = site.papers | sort: "order" -%}
+{%- assign corresponding = papers | where: "corresponding", true -%}
+{%- if corresponding.size > 0 %}
+<p class="heading-note">* Corresponding author</p>
+{%- endif %}
 <ul class="papers">
 {%- for p in papers %}
   <li>
     <a class="thumb" href="{{ p.url | relative_url }}" title="About this paper: figure, summary and links"><img src="{{ p.thumb | relative_url }}" alt="About this paper: {{ p.title | escape }}" width="352" height="264"></a>
     <div>
       <a class="title" href="{{ p.official.url }}">{{ p.title | escape }}</a>
-      <p class="authors">{{ p.authors_short | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+      <p class="authors">{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       <p class="venue">{{ p.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
       {%- if p.tldr %}
       <p class="tldr">{{ p.tldr | escape }}</p>

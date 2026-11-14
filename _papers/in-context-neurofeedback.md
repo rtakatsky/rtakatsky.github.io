@@ -5,9 +5,9 @@ description: "Questions an earlier claim of metacognitive control in LLMs: with 
 order: 4
 year: 2026
 authors: "Aoki, K., **Takatsuki, R.**, Minegishi, G., Haruki, Y., & Kawahara, D."
-authors_short: "Aoki, K., **Takatsuki, R.**, Minegishi, G., Haruki, Y., & Kawahara, D."
+corresponding: false
 venue: "*Findings of EMNLP 2026*"
-venue_full: "*Findings of the Association for Computational Linguistics: EMNLP 2026*, pp. 18129–18152, Budapest, Hungary, Oct 24–29, 2026. Earlier version: *Trustworthy AI for Good (AI4GOOD) Workshop @ ICML 2026*, Seoul, South Korea, Jul 10, 2026 (**spotlight**)."
+venue_extra: "*Trustworthy AI for Good (AI4GOOD) Workshop @ ICML 2026* (spotlight)"
 official:
   url: "https://aclanthology.org/2026.findings-emnlp.857/"
   name: "ACL Anthology"
@@ -29,5 +29,6 @@ findings:
   - "Identifies that previously reported \"control\" of internal representations may rely on superficial mechanisms because targets were not privileged"
   - "Redesigns the neurofeedback paradigm for LLMs with a privileged-access requirement (fixed output sentence, scalar probe-based feedback, scoring rule never revealed)"
   - "Shows current models struggle to control privileged internal representations, with implications for AI safety and metacognition evaluation"
-cite: "Aoki, K., **Takatsuki, R.**, Minegishi, G., Haruki, Y., & Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? *Findings of the Association for Computational Linguistics: EMNLP 2026*, pp. 18129–18152, Budapest, Hungary, Oct 24–29, 2026. Earlier version: *Trustworthy AI for Good (AI4GOOD) Workshop @ ICML 2026*, Seoul, South Korea, Jul 10, 2026 (**spotlight**)."
+bibliography: "Aoki, K., Takatsuki, R., Minegishi, G., Haruki, Y., & Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? *Findings of the Association for Computational Linguistics: EMNLP 2026*, pp. 18129–18152, Budapest, Hungary, Oct 24–29, 2026."
+bibtex: "@inproceedings{aoki-etal-2026-context,\n    title = \"In-Context Neurofeedback: Can {LLM}s Control Their Internal Representations through Privileged Access?\",\n    author = \"Aoki, Koshiro and Takatsuki, Ryota and Minegishi, Gouki and Haruki, Yusuke and Kawahara, Daisuke\",\n    editor = \"Lee, Hung-Yi and Dev, Sunipa and Li, Jessy and Elliott, Desmond\",\n    booktitle = \"Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2026\",\n    month = oct,\n    year = \"2026\",\n    address = \"Budapest, Hungary\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2026.findings-emnlp.857/\",\n    doi = \"10.18653/2026.findings-emnlp.857\",\n    pages = \"18129--18152\",\n    ISBN = \"979-8-89176-462-0\"\n}"
 ---
