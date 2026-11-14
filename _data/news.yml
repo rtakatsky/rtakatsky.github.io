@@ -1,6 +1,8 @@
 # Newest first. Facts and URLs come from ~/academic-portfolio (profile/ and the
 # publication/presentation READMEs). Plain past tense.
 
+- when: Nov 2026
+  text: 'Accepted to [MATS Winter 2027](https://www.matsprogram.org/program/winter-2027), a 12-week research program in AI safety in Berkeley, CA (Jan–Apr 2027), with mentorship by [Patrick Butlin](https://patrickbutlin.com/) (Eleos AI).'
 - when: Aug 2026
   text: 'Two papers accepted at EMNLP 2026: "(How) Do MLLMs Report Bistable Images Like Humans?" (main conference, first author; [arXiv](https://arxiv.org/abs/2609.13254), [code](https://github.com/rtakatsky/mllm-bistable-images)) and "In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access?" (Findings; [arXiv](https://arxiv.org/abs/2609.00904), [code](https://github.com/AokiKoshiro/in-context-neurofeedback)).'
 - when: Jul 2026
