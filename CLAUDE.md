@@ -19,7 +19,7 @@ Personal academic site of Ryota Takatsuki, served by GitHub Pages at https://rta
 
 - The site is English only; the Japanese name appears under the English name on the home page. Do not add translated pages.
 - First person, concise, academic but plain. No hype, and stay neutral on machine consciousness.
-- Author lists show my name in bold and mark the corresponding author with `*` after the name, never "(corresponding author)". A small "* Corresponding author" note sits under the heading of any list or page that uses the mark. The sync script turns the portfolio's "\* (corresponding author)" into the mark.
+- Author lists show my name in bold and mark the corresponding author with `*` after the name, never "(corresponding author)". A small legend sits under the heading of any list or page that uses the mark ("* Corresponding author" on the home page and paper pages; "Bold: my name · *: corresponding author" on Publications, followed by the Google Scholar link). The sync script turns the portfolio's "\* (corresponding author)" into the mark.
 
 ## Design and security constraints
 

@@ -31,7 +31,7 @@ TODAY = datetime.date.today().isoformat()
 SELECTED = [
     {
         "folder": "2026-bistable-images",
-        "slug": "bistable-images",
+        "slug": "mllm-bistable-images",
         "venue": "*EMNLP 2026*",
         "official": {"label": "ACL Anthology", "name": "ACL Anthology"},
         "thumb": "/assets/img/papers/bistable-images-thumb.jpg",
@@ -356,7 +356,8 @@ def paper_page(entry: dict, order: int) -> None:
 def main() -> None:
     body = publications_body()
     # Jekyll expands the Liquid tag, so the URL stays in _config.yml only.
-    note = ("My name is shown in bold, and \\* marks the corresponding author. "
+    # A small legend under the heading (as on the home page), then the Scholar link.
+    note = ('<p class="heading-note"><strong>Bold</strong>: my name · *: corresponding author</p>\n\n'
             "See also my [Google Scholar profile]({{ site.links.scholar }}).\n\n")
     write("publications.md", front_matter(
         title="Publications", permalink="/publications/",

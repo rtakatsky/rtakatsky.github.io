@@ -5,7 +5,9 @@ description: Publications and presentations by Ryota Takatsuki.
 synced: 2026-11-14
 ---
 
-My name is shown in bold, and \* marks the corresponding author. See also my [Google Scholar profile]({{ site.links.scholar }}).
+<p class="heading-note"><strong>Bold</strong>: my name · *: corresponding author</p>
+
+See also my [Google Scholar profile]({{ site.links.scholar }}).
 
 ## Journal articles
 
