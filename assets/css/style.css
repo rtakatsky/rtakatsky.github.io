@@ -9,6 +9,8 @@
   --muted: #a39d92;
   --rule: #2e2b26;
   --accent: #c6a5e6;
+  /* Paper figures are drawn on white; dim them a little on the dark page. */
+  --figure-filter: brightness(0.94);
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Arial, sans-serif;
   --measure: 42rem;
@@ -21,6 +23,7 @@
   --muted: #6d675e;
   --rule: #e3ded4;
   --accent: #6f3f8f;
+  --figure-filter: none;
 }
 
 * { box-sizing: border-box; }
@@ -259,7 +262,109 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
 
 /* Publication lists */
 .pubs li, .content > ul > li { padding-left: 0.1rem; }
-.selected li { margin-bottom: 0.8rem; }
+
+/* Selected publications on the home page: the paper's own figure, on white,
+   beside the title, authors, venue and a one-line TL;DR. The thumbnail opens
+   the paper's page here; the title opens the official page. Thumbnails are
+   352 x 264 files shown at about half size. */
+.papers { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.content > .papers > li { padding-left: 0; }
+.papers li {
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 0 1.25rem;
+  align-items: start;
+  margin: 0 0 1.75rem;
+}
+.papers .thumb { display: block; line-height: 0; margin-top: 0.3rem; border-radius: 4px; }
+.papers .thumb:focus-visible { outline-offset: 2px; }
+.papers .thumb img,
+.paper-figure img,
+.paper-video {
+  display: block;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--rule);
+  filter: var(--figure-filter);
+}
+.papers .thumb img { width: 100%; height: auto; }
+.papers .thumb:hover img { box-shadow: 0 0 0 1px var(--accent); }
+.papers p { margin: 0; }
+.papers .title {
+  display: block;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+.papers .title:hover { color: var(--accent); }
+.papers .authors { font-size: 0.92rem; }
+.papers .venue { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+.papers .tldr { font-size: 0.92rem; line-height: 1.5; margin-top: 0.35rem; }
+@media (max-width: 480px) {
+  .papers li { grid-template-columns: 5.5rem 1fr; gap: 0 0.9rem; }
+}
+
+/* A paper's page (_layouts/paper.html). */
+.paper-authors { margin: -0.8rem 0 0.3rem; }
+.paper-venue { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0; }
+/* Icon links with short labels (paper, arXiv, code, thread, video). The
+   negative left margin lines the first icon up with the text edge. */
+.paper-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
+  margin: 0.9rem 0 2rem -0.45rem;
+}
+.content > .paper-icons > li { margin: 0; padding: 0; }
+.paper-icons a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.45rem;
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.paper-icons a:hover { color: var(--accent); }
+.paper-icons a:focus-visible { outline-offset: 0; }
+.paper-icons svg { display: block; width: 1.3rem; height: 1.3rem; fill: currentColor; flex: none; }
+.paper-figure { margin: 0 0 1rem; }
+.paper-figure img {
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 34rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem;
+}
+.paper-figure figcaption,
+.video-meta {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 0.7rem;
+}
+/* The explainer video: the browser's own player, no script. */
+.paper-video { width: 100%; height: auto; }
+.findings li { margin-bottom: 0.45rem; }
+.cite {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.back { font-family: var(--sans); font-size: 0.88rem; margin-top: 2.5rem; }
+.back a { text-decoration: none; color: var(--muted); }
+.back a:hover { color: var(--accent); }
 
 /* Footer and small print */
 .meta, .site-footer {

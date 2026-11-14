@@ -27,11 +27,22 @@ titles_from_headings:
 readme_index:
   enabled: false
 
+# One page per selected paper: _papers/<slug>.md -> /papers/<slug>/
+collections:
+  papers:
+    output: true
+    permalink: /papers/:name/
+
 defaults:
   - scope:
       path: ""
     values:
       layout: default
+  - scope:
+      path: ""
+      type: papers
+    values:
+      layout: paper
 
 exclude:
   - Gemfile

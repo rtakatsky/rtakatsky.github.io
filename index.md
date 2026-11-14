@@ -25,11 +25,6 @@ Before Sussex, I was a research intern in [Ryota Kanai](https://research.araya.o
 
 ## Selected publications
 
-<ul class="selected">
-  <li><strong>Takatsuki, R.</strong>, Doi, T., Watahiki, A., Seth, A. K., &amp; Yanaka, H. (2026). (How) Do MLLMs Report Bistable Images Like Humans? <em>EMNLP 2026</em>, main conference (to appear). <a href="https://arxiv.org/abs/2609.13254">arXiv</a> · <a href="https://github.com/rtakatsky/mllm-bistable-images">Code</a></li>
-  <li>Kanai, R., <strong>Takatsuki, R.</strong>, &amp; Fujisawa, I. (2025). Meta-representations as representations of processes. <em>Neuroscience of Consciousness</em>, 2025(1), niaf038. <a href="https://doi.org/10.1093/nc/niaf038">DOI</a> · <a href="https://github.com/rtakatsky/metarep">Code</a></li>
-  <li><strong>Takatsuki, R.</strong>, Joseph, S., Fujisawa, I., &amp; Kanai, R. (2025). Decoding Vision Transformers: the Diffusion Steering Lens. <em>Workshop on Mechanistic Interpretability for Vision, CVPR 2025</em>. <a href="https://arxiv.org/abs/2504.13763">arXiv</a> · <a href="https://github.com/rtakatsky/DSLens">Code</a></li>
-  <li>Aoki, K., <strong>Takatsuki, R.</strong>, Minegishi, G., Haruki, Y., &amp; Kawahara, D. (2026). In-Context Neurofeedback: Can LLMs Control Their Internal Representations through Privileged Access? <em>Findings of EMNLP 2026</em> (to appear). <a href="https://arxiv.org/abs/2609.00904">arXiv</a> · <a href="https://github.com/AokiKoshiro/in-context-neurofeedback">Code</a></li>
-</ul>
+{% include selected.html %}
 
 [All publications and presentations →](/publications/)
